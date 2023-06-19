@@ -5,8 +5,8 @@ def home(request):
     return render(request, 'index.html')
 
 def service(request):
-    return HttpResponse('service')
+    return render(request, 'service.html')
 
 def contact(request):
-    return HttpResponse('contact')
+    return render(request, 'contact.html')
 # Create your views here.
