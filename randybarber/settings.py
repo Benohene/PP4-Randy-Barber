@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["8000-benohene-pp4-randy-barbe-yp9v9459va.us2.codeanyapp.com", "randy-barber-app.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["8000-benohene-pp4-randy-barbe-yp9v9459va.us2.codeanyapp.com", "randy-barber-app-bd2e48941993.herokuapp.com", "localhost"]
 
 
 # Application definition
