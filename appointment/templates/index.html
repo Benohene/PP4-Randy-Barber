@@ -1,6 +1,196 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block content %}
-    <h1>Hello Homepage</h1>
+
+
+<!-- hero with appointment -->
+<div class="hero home-hero">
+    <div class="container">
+        <div class="hero-subheading">Welcome To Our Barber Shop</div>
+        <div class="hero-heading text-uppercase">It's Nice To Meet You</div>
+        <a class="btn btn-warning btn-xl text-uppercase" href="#">Book Appointment</a>
+    </div>
+</div>
+<!-- hero with appointment Ends -->
+
+{% include 'includes/welcome.html' %}
+
+<!-- What we do -->
+<section class="what-we-do pt-5 pb-5">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Services</h2>
+            <h3 class="section-subheading " id="sub-header">We are at your Service at any time</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Service item 1-->
+                <div class="service-item">
+                    <img class="img-fluid" src="{% static 'images/service-menhaircut.jpg' %}" alt="..." />
+
+                    <div class="service-caption">
+                        <div class="service-caption-heading text-bg-light text-center pt-2 pb-2">Men Haircut
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Service item 2-->
+                <div class="service-item">
+                    <img class="img-fluid" src="{% static 'images/service-beard-trim.jpg' %}" alt="..." />
+
+                    <div class="service-caption">
+                        <div class="service-caption-heading text-bg-light text-center pt-2 pb-2">Beard
+                            Trimming</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Service item 3-->
+                <div class="service-item">
+
+                    <img class="img-fluid" src="{% static 'images/service-hair-color.jpg' %}" alt="..." />
+
+                    <div class="service-caption">
+                        <div class="service-caption-heading text-bg-light text-center pt-2 pb-2">Coloring
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                <!-- Service item 4-->
+                <div class="service-item">
+                    <img class="img-fluid" src="{% static 'images/service-styling.jpg' %}" alt="..." />
+
+                    <div class="service-caption">
+                        <div class="service-caption-heading text-bg-light text-center pt-2 pb-2">Styling</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                <!-- Service item 5-->
+                <div class="service-item">
+                    <img class="img-fluid" src="{% static 'images/service-women.jpeg' %}" alt="..." />
+
+                    <div class="service-caption">
+                        <div class="service-caption-heading text-bg-light text-center pt-2 pb-2">Women
+                            Haircut</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <!-- Service item 6-->
+                <div class="service-item">
+                    <img class="img-fluid" src="{% static 'images/service-service-kids.jpg' %}" alt="..." />
+
+                    <div class="service-caption">
+                        <div class="service-caption-heading text-bg-light text-center pt-2 pb-2">Kids Haircut
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Ends What we do  -->
+
+<!--Opening Time-->
+<section class="openings">
+    <div class="container text-center ">
+        <h2>OPENING HOURS</h2>
+        <p>We are always at your Service</p>
+        <table class="table table-borderless">
+            <tbody>
+                <!--Day 1-->
+                <tr>
+                    <td class="day">MONDAYS</td>
+                    <td class="times">CLOSED</td>
+                </tr>
+                <!--Day 2-->
+                <tr>
+                    <td class="day">TUESDAYS</td>
+                    <td class="times">10AM-8PM</td>
+                </tr>
+                <!--Day 3-->
+                <tr>
+                    <td class="day">WEDNESDAYS</td>
+                    <td class="times">10AM-8PM</td>
+                </tr>
+                <!--Day 4-->
+                <tr>
+                    <td class="day">THURSDAYS</td>
+                    <td class="times">10AM-8PM</td>
+                </tr>
+                <!--Day 5-->
+                <tr>
+                    <td class="day">FRIDAYS</td>
+                    <td class="times">10AM-8PM</td>
+                </tr>
+                <!--Day 6-->
+                <tr>
+                    <td class="day">SATURDAYS</td>
+                    <td class="times">10AM-8PM</td>
+                </tr>
+                <!--Day 7-->
+                <tr>
+                    <td class="day">SUNDAYS</td>
+                    <td class="times">CLOSED</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<!--End Opening Time-->
+
+<!-- Team Member -->
+<section class="what-we-do pt-5 pb-5">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Team Members</h2>
+            <h3 class="section-subheading " id="sub-header">Meet our extra-ordinary Team Members</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Team Member 1-->
+                <div class="service-item">
+                    <img class="img-fluid" src="{% static 'images/team_member1.jpg' %}" alt="..." />
+
+                    <div class="service-caption">
+                        <div class="service-caption-heading text-bg-light text-center pt-2 pb-2">Randy Osei-Boss
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Team Member 2-->
+                <div class="service-item">
+                    <img class="img-fluid" src="{% static 'images/team_member2.jpg' %}" alt="..." />
+
+                    <div class="service-caption">
+                        <div class="service-caption-heading text-bg-light text-center pt-2 pb-2">Randy Agyei-Boss</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Team Member 2-->
+                <div class="service-item">
+                    <img class="img-fluid" src="{% static 'images/team_member3.jpg' %}" alt="..." />
+
+                    <div class="service-caption">
+                        <div class="service-caption-heading text-bg-light text-center pt-2 pb-2">Steven Altete-Expect
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- End Team Member -->
+
+<!-- Testomonial -->
+{% include 'includes/testimonial.html' %}
+<!-- End Testimonial -->
+
 {% endblock content %}
