@@ -1,6 +1,96 @@
 {% extends "base.html" %}
+{% load static %}
 
 
 {% block content %}
-<h1>Contact</h1>
+<!-- hero with appointment -->
+<div class="hero contact-hero">
+    <div class="container">
+        <div class="hero-subheading">Get in Touch with Us!</div>
+        <div class="hero-heading text-uppercase">contact us</div>
+        <a class="btn btn-warning btn-xl text-uppercase" href="#">Book Appointment</a>
+    </div>
+</div>
+<!-- hero with appointment Ends -->
+
+<!-- Welcome Section -->
+{% include 'includes/welcome.html' %}
+<!-- Welcome Section End -->
+
+<!-- Locate Us -->
+<section>
+    <div class="container-fluid p-4 map-content">
+        <div class="map">
+            <h2 class="text-center pb-3">Locate Us</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2521.9773918102505!2d6.214867613177288!3d50.79452756241038!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c09e2ffe221c75%3A0x12fcf7b33c657215!2sStolberg%2C%20Hbf!5e0!3m2!1sen!2sde!4v1687245769626!5m2!1sen!2sde"
+                width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+<!-- End Locate Us -->
+
+<!-- Contact Form -->
+<section class="contact-section pt-5 pb-5">
+    <div class="container mt-5">
+        <div class="row block-9">
+            <div class="col-md-4 contact-info ">
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <h2 class="h4">Contact Information</h2>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <p class="contact-details"><span>Address:</span>
+                        <p class="address"> Bahnhofstr 10, 52064 Aachen <br> 5 Minutes walk from Aachen BahnHof
+                        </p>
+                        </p>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <p class="contact-details"><span>Phone:</span> <a href="tel://1234567920">+49 1521 443
+                                3345
+                                98</a></p>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <p class="contact-details"><span>Email:</span> <a
+                                href="mailto:bmelodson@yahoo.com">info@randybarberaachen.com</a></p>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <p class="contact-details"><span>Website:</span> <a href="#">www.randybarberaachen</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6 ">
+                <form action="#" class="contact-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="" id="" cols="30" rows="7" class="form-control"
+                            placeholder="Message"></textarea>
+                    </div>
+                    <div class="form-group pt-4">
+                        <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Contact Form -->
+
 {% endblock content %}
