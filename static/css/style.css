@@ -1,0 +1,37 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Nav Bar with Brand Logo */
+
+#logo-brand img {
+    width: 200px;
+    height: 60px;
+}
+
+.navbar ul a:hover {
+    background-color: #fff;
+    color: black;
+}
+
+/* Nav Bar Ends */
+
+/* Footer */
+footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+footer .btn:hover {
+    background-color: #b68500;
+    color: #fff;
+}
+
+/* End Footer */
