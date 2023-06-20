@@ -5,6 +5,7 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+
 /* Nav Bar with Brand Logo */
 #logo-brand img {
     width: 200px;
@@ -18,10 +19,11 @@ body {
 
 /* Nav Bar Ends */
 
+/* HOMEPAGE STARTS */
 /*hero*/
 .service-hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-        url("../images/cover_2.jpg");
+        url("../images/cover_3.jpg");
 }
 
 .home-hero {
@@ -233,6 +235,45 @@ section {
 }
 
 /*End Testimonial*/
+/* END HOMEPAGE*/
+
+/*SERVICE PAGE*/
+/* Price Section-Service Page */
+.price-section {
+    color: #fff;
+}
+
+.price-section .price,
+.time {
+    width: 80px;
+    color: #ce9c6b;
+    font-size: 16px;
+}
+
+.price-section hr {
+    border: 2px dotted #ffffff;
+    padding: 0;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.price-section .text h3 {
+    width: calc(100% - 70px);
+    font-size: 18px;
+}
+
+.price-section .text h3 span {
+    background: #000000;
+    padding-right: 20px;
+}
+
+/* End Price Section-Service Page */
+
+/* END SERVICE PAGE */
+
+/*CONTACT PAGE*/
+
+/* END CONTACT PAGE */
 
 /* Footer */
 footer {
@@ -249,3 +290,26 @@ footer .btn:hover {
 }
 
 /* End Footer */
+
+
+/*Media Queries*/
+@media (min-width: 768px) {
+    div.hero {
+        padding-top: 17rem;
+        padding-bottom: 12.5rem;
+    }
+
+    div.hero .hero-subheading {
+        font-size: 2.25rem;
+        font-style: italic;
+        line-height: 2.25rem;
+        margin-bottom: 2rem;
+    }
+
+    div.hero .hero-heading {
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 4.5rem;
+        margin-bottom: 4rem;
+    }
+}
