@@ -21,6 +21,10 @@ body {
     border-bottom: 2px solid #fff;
 }
 
+.navUsername {
+    color: #b68500;
+}
+
 /* Nav Bar Ends */
 
 /* HOMEPAGE STARTS */
@@ -356,6 +360,13 @@ footer .btn:hover {
 
 /* End Footer */
 
+/* Login, Logout, Sign up */
+.accountMain {
+    height: 100%;
+    padding-top: 10rem;
+    padding-bottom: 15rem;
+}
+
 
 /*Media Queries*/
 @media (min-width: 768px) {
@@ -383,8 +394,4 @@ footer .btn:hover {
     .map {
         max-width: 100%;
     }
-}
-
-    {
-    height: 95vh;
 }

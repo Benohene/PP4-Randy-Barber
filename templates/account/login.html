@@ -6,16 +6,16 @@
 {% block title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-
+<div class="accountMain">
     <div class="container text-center">
-        <h1>{% trans "Sign In" %}</h1>
+        <h1>{% trans "Sign In - Become a Member" %}</h1>
 
         <p>{% blocktrans %}If you have not created an account yet, then please
-            <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+            <a href="{{ signup_url }}">Sign up</a> first.{% endblocktrans %}
         </p>
 
 
-        <form class="form p-5 m-5" method="POST" action="{% url 'account_login' %}">
+        <form class="account_form" method="POST" action="{% url 'account_login' %}">
             {% csrf_token %}
             {{ form|crispy }}
             {% if redirect_field_value %}
@@ -24,5 +24,5 @@
             <button class="btn btn-primary w-25 mb-2" type="submit">{% trans "Sign In" %}</button>
 
     </div>
-
+</div>
 {% endblock %}
