@@ -21,13 +21,13 @@
 
     <!-- Inclusive CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Randy Barber</title>
+    <title>{% block title %}Randy Barber{% endblock title %}</title>
 </head>
 
 <body>
     <!-- Nav Bar and Logo and appointment -->
     <header>
-
+        {% with request.resolver_match.url_name as url_name %}
         <!--Nav Bar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top " id="navMain">
             <div class="container-fluid nav-container">
@@ -39,21 +39,34 @@
                         class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navBarLinks">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item active"><a class="nav-link" aria-current="page"
-                                href="{% url 'home' %}">Home</a>
+                        <li class="nav-item"><a class="nav-link {% if url_name == 'home' %}active{% endif %}"
+                                aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'service' %}">Service</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link {% if url_name == 'service' %}active{% endif %}"
+                                href="{% url 'service' %}">Service</a></li>
+                        <li class="nav-item"><a class="nav-link {% if url_name == 'contact' %}active{% endif %}"
+                                href="{% url 'contact' %}">Contact</a></li>
+
+                        {% if request.user.is_authenticated %}
                         <li class="nav-item signup-btn">
-                            <a class="nav-link" href="{% url 'service' %}">Register</a>
+                            <a class="nav-link {% if url_name == 'account_logout' %}active{% endif %}"
+                                href="/accounts/logout/">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item signup-btn">
+                            <a class="nav-link {% if url_name == 'account_signup' %}active{% endif %}"
+                                href="/accounts/signup/">Register</a>
                         </li>
                         <li class="nav-item login-btn">
-                            <a class="nav-link" href="{% url 'service' %}">Login</a>
+                            <a class="nav-link {% if url_name == 'account_login' %}active{% endif %}"
+                                href="/accounts/login/">Login</a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
         </nav>
+        {% endwith %}
     </header>
     <!-- Nav Bar and Logo Ends -->
 
@@ -69,12 +82,12 @@
             <div class="row align-items-center">
                 <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
                 <div class="col-lg-4 my-3 my-lg-0">
-                    <a class="btn btn-light btn-social mx-2" href="https://twitter.com/?lang=en" target="_blank" aria-label="Twitter"><i
-                            class="fab fa-twitter"></i></a>
-                    <a class="btn btn-light btn-social mx-2" href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-light btn-social mx-2" href="https://www.linkedin.com/feed/" target="_blank" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-light btn-social mx-2" href="https://twitter.com/?lang=en" target="_blank"
+                        aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-light btn-social mx-2" href="https://www.facebook.com/" target="_blank"
+                        aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-light btn-social mx-2" href="https://www.linkedin.com/feed/" target="_blank"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <div class="col-lg-4 text-lg-end">
                     <a class="link-light text-decoration-none me-3" href="#!">Privacy Policy</a>

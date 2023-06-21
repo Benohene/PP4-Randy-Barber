@@ -1,3 +1,8 @@
+html,
+body {
+    height: 100%;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -12,9 +17,8 @@ body {
     height: 60px;
 }
 
-.navbar ul a:hover {
-    background-color: #fff;
-    color: black;
+.active {
+    border-bottom: 2px solid #fff;
 }
 
 /* Nav Bar Ends */
@@ -235,6 +239,7 @@ section {
 }
 
 /*End Testimonial*/
+
 /* END HOMEPAGE*/
 
 /*SERVICE PAGE*/
@@ -299,14 +304,14 @@ section {
 }
 
 .contact-form .form-control {
-    border: transparent !important;
-    border-bottom: 1px solid rgba(248, 248, 248, 0.2) !important;
+    border: transparent;
+    border-bottom: 1px solid rgba(248, 248, 248, 0.2);
     padding-top: 15px;
     padding-bottom: 15px;
     padding-left: 0;
     padding-right: 0;
-    background: transparent !important;
-    color: rgba(255, 255, 255, 0.9) !important;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.9);
     border-radius: 0px;
 }
 
@@ -316,7 +321,7 @@ textarea {
 }
 
 .contact-form textarea.form-control {
-    height: inherit !important;
+    height: inherit;
 }
 
 .contact-form input::placeholder,
@@ -378,4 +383,8 @@ footer .btn:hover {
     .map {
         max-width: 100%;
     }
+}
+
+    {
+    height: 95vh;
 }
