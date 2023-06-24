@@ -7,7 +7,7 @@ TIME_CHOICES = (
 
 class Appointment(models.Model):
     customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name="customer")
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=400)
     appointment_date = models.DateField()
     appointment_time = models.IntegerField(choices=TIME_CHOICES, default=0)
     phone_number = models.IntegerField()

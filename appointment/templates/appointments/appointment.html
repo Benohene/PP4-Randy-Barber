@@ -1,6 +1,28 @@
 {% extends "account/base.html" %}
+{% load static %}
 
 {% load i18n %}
-{% load account socialaccount %}
 
-{% block title %}{% trans "Appointment" %}{% endblock %}
+{% block title %}{% trans "Appointment" %}{% endblock %} 
+
+<!-- Create Appointment form -->
+{% block content %}
+
+<div class="accountMain">
+    <div class="container text-center">
+        <h1>{% trans "Book your Appointment" %}</h1>
+
+        <form class="form mb-2 p-2 form-style" method="POST" action="{% url 'appointment' %}">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {{ form.media }}
+            <!-- {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %} -->
+            <button class="btn btn-primary w-25 mb-2" type="submit">{% trans "Book Now" %}</button>
+
+    </div>
+</div>
+
+{% endblock %}
+
