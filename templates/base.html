@@ -54,7 +54,8 @@
                         </li>
                         <li class="nav-item signup-btn">
                             <a class="nav-link {% if url_name == 'account_logout' %}active{% endif %}"
-                                href="#">User Profile</a>
+                                href="{% url 'user_panel' %}">User
+                                Panel</a>
                         </li>
                         {% else %}
                         <li class="nav-item signup-btn">
@@ -77,7 +78,7 @@
         </nav>
         {% endwith %}
     </header>
-    <!-- Nav Bar and Logo Ends -->
+    <!-- Alert  -->
 
     <!-- display any alerts that have been raised 
     <div class="container">
@@ -91,8 +92,9 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
-     /.alerts-->
+    </div> -->
+
+    <!-- Alert Ends -->
 
 
     <main>
@@ -134,6 +136,13 @@
     <script src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
         integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/2730ac997a.js" crossorigin="anonymous"></script>
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2500);
+    </script>
 </body>
 
 </html>
