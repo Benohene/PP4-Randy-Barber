@@ -6,15 +6,15 @@ TIME_CHOICES = (
 )
 
 class Appointment(models.Model):
-    customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name="customer")
+    customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name="customer", null=True, blank=True)
     name = models.CharField(max_length=400)
     appointment_date = models.DateField()
-    appointment_time = models.IntegerField(choices=TIME_CHOICES, default=0)
-    phone_number = models.IntegerField()
+    appointment_time = models.IntegerField(choices=TIME_CHOICES)
+    phone_number = models.CharField(max_length=15)
     message = models.TextField(null=True, blank=True)
 
     class Meta:
         ordering = ['appointment_date', 'appointment_time']
 
-    def __str__(self):
-        return f"{self.user.name} | day: {self.appointment_date} | time: {self.appointment_time}"
+
+    

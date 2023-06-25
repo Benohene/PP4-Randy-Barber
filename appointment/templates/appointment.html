@@ -1,0 +1,32 @@
+{% extends "account/base.html" %}
+{% load static %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Appointment" %}{% endblock %}
+
+<!-- Create Appointment form -->
+{% block content %}
+
+<div class="accountMain">
+    <div class="m-3">
+        <form method="POST" action="{% url 'appointment' %}" class="form mb-2 p-2 form-style"
+            enctype="multipart/form-data">
+            <h1 class="text-center">Create Booking</h1>
+            {% csrf_token %}
+            {{ form|crispy }}
+            {{ form.media }}
+            <button type="submit" class="btn form-style">Book Now</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block ext_script %}
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script>
+    $('.datepicker').datepicker();
+</script>
+{% endblock %}

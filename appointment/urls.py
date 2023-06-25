@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
-from appointment.views import HomeView, ServiceView, ContactView, AppointmentView
-
+from appointment.views import HomeView, ServiceView, ContactView 
+from appointment.views import AppointmentView
 
 
 urlpatterns = [
