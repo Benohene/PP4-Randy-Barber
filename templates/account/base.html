@@ -53,7 +53,8 @@
                                 href="/accounts/logout/">Logout</a>
                         </li>
                         <li class="nav-item signup-btn">
-                            <a class="nav-link {% if url_name == 'account_logout' %}active{% endif %}" href="#">User
+                            <a class="nav-link {% if url_name == 'account_logout' %}active{% endif %}"
+                                href="{% url 'user_panel' %}">User
                                 Panel</a>
                         </li>
                         {% else %}

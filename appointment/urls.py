@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 from appointment.views import HomeView, ServiceView, ContactView 
-from appointment.views import AppointmentView, UserPanelView, AppointmentEditView
+from appointment.views import AppointmentView, UserPanelView, AppointmentEditView, AppointmentDeleteView
 
 
 urlpatterns = [
@@ -11,7 +11,7 @@ urlpatterns = [
     path('appointment/', AppointmentView.as_view(), name="appointment"),
     path('user_panel/', UserPanelView.as_view(), name="user_panel"),
     path('user_panel/<int:pk>/edit/', AppointmentEditView.as_view(), name="appointment_edit"),
-    path('user_panel/<int:pk>/delete/', AppointmentEditView.as_view(), name="appointment_edit"),
+    path('user_panel/<int:pk>/delete/', AppointmentDeleteView.as_view(), name="appointment_delete"),
 ]
 
 

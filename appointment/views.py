@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from datetime import date
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.views.generic import TemplateView, CreateView, ListView, UpdateView
+from django.views.generic import TemplateView, CreateView, ListView, UpdateView, DeleteView
 from .models import Appointment
 from .forms import AppointmentForm
 from django.http import HttpResponseRedirect
@@ -55,10 +55,10 @@ class UserPanelView(LoginRequiredMixin, ListView):
         return Appointment.objects.all()
 
 
-class AppointmentEditView(LoginRequiredMixin, UpdateView):
+class AppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """
     View to render appointment page 
-    renders the view of the appointment forms
+    renders the view of the appointment forms for Update
     """
     model = Appointment
     template_name = 'appointment_edit.html'
@@ -68,8 +68,31 @@ class AppointmentEditView(LoginRequiredMixin, UpdateView):
     def userUpdate(request, id):
         appointment = Appointment.objects.get(pk=id)
 
-    # def test_func(self):
-    #     appointment = self.get_object()
-    #     if self.request.user.id:
-    #         return True
-    #     return False
+    def test_func(self):
+        appointment = self.get_object()
+        if self.request.user.id:
+            return True
+        return False
+
+class AppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    """
+    View to render appointment page 
+    renders the view of the appointment forms
+    """
+    template_name = 'appointment_confirm_delete.html'
+    success_url = reverse_lazy('user_panel')
+    context_object_name = 'appointment'
+    queryset = Appointment.objects.all()
+
+    def get(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        appointments = self.get_context_data(object=self.object)
+        return self.render_to_response(appointments)
+
+    def test_func(self):
+        appointment = self.get_object()
+        if self.request.user.id:
+            return True
+        return False
+
+

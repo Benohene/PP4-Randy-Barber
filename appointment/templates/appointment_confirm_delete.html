@@ -1,0 +1,29 @@
+{% extends "account/base.html" %}
+{% load static %}
+
+{% load i18n %}
+
+{% block title %}{% trans "Appointment" %}{% endblock %}
+
+<!-- Create Appointment form -->
+{% block content %}
+<div class="accountMain">
+    <div class="m-3">
+        <form method="POST" action="" class="form mb-2 p-2 form-style" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1 class="">Delete Appointment</h1>
+            <h3>Are you sure you want to delete this Appointment</h3>
+            <button type="submit" class="btn btn-danger rounded-3 p-2 form-style">Delete</button>
+            <a href="{% url 'user_panel' %}" class="btn btn-primary rounded-3 p-2 form-style">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block ext_script %}
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script>
+    $('.datepicker').datepicker();
+</script>
+{% endblock %}
