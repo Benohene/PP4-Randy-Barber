@@ -1,6 +1,16 @@
+function noSundays(date) {
+    return [date.getDay() != 0, ''];
+}
+
+
 $(document).ready(function () {
 
-    $(".dateinput").datepicker({ changeYear: true, changeMonth: true });
+    $(".dateinput").datepicker({
+        minDate: new Date(),
+        maxDate: '+31D',
+        daysOfWeekHighlighted: "5,6",
+        beforeShowDay: noSundays
+    });
 
 
 });

@@ -16,7 +16,7 @@ class AppointmentForm(forms.ModelForm):
         appointment_date = forms.DateField()
         labels = {
             'name': 'Name',
-            'appointment_date' : 'Date',
+            'appointment_date' : 'Date - DD/MM/YY',
             'appointment_time' : 'Time',
             'phone_number' : 'Phone Number',
             'message' : 'Message',
