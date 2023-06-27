@@ -11,7 +11,6 @@ body {
     color: #303030;
 }
 
-
 /* Nav Bar with Brand Logo */
 #logo-brand img {
     width: 200px;
@@ -343,7 +342,11 @@ textarea {
 
 /* End Contact */
 
-/* END CONTACT PAGE */
+.no-appointment {
+    color: #b68500;
+}
+
+
 
 /* Footer */
 footer {
@@ -368,7 +371,10 @@ footer .btn:hover {
     padding-bottom: 15rem;
 }
 
-
+.form-check-label {
+   margin: 0;
+   padding: 0;
+}
 
 
 /*Media Queries*/
@@ -390,6 +396,14 @@ footer .btn:hover {
         font-weight: 700;
         line-height: 4.5rem;
         margin-bottom: 4rem;
+    }
+
+
+}
+
+@media (max-width: 484px) {
+    .editBtn {
+        margin-bottom: 10px;
     }
 }
 

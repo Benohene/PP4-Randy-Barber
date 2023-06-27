@@ -7,6 +7,7 @@ from .forms import AppointmentForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 
 class HomeView(TemplateView):
     """
@@ -27,7 +28,7 @@ class ContactView(TemplateView):
     template_name = 'contact.html'
 
 
-class AppointmentView(LoginRequiredMixin, CreateView):
+class AppointmentView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     """
     View to render appointment page 
     renders the view of the appointment forms
@@ -36,6 +37,7 @@ class AppointmentView(LoginRequiredMixin, CreateView):
     model = Appointment
     form_class = AppointmentForm
     success_url= reverse_lazy('user_panel')
+    success_message = 'Your Appointment has successfully been booked! See You'
 
     def form_valid(self, form):
         form.instance.customer = self.request.user
@@ -54,7 +56,7 @@ class UserPanelView(LoginRequiredMixin, ListView):
     model = Appointment
     template_name = "user_panel.html"
     context_object_name = 'appointments'
-    paginate_by = 4
+    paginate_by = 2
 
     
     def get_queryset(self):
