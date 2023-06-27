@@ -29,7 +29,7 @@
     <header>
         {% with request.resolver_match.url_name as url_name %}
         <!--Nav Bar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top " id="navMain">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black" id="navMain">
             <div class="container-fluid nav-container">
                 <!--Brand Logo-->
                 <a class="navbar-brand" id="logo-brand" href="{% url 'home' %}"> <img
@@ -80,20 +80,19 @@
     </header>
     <!-- Alert  -->
 
-    <!-- display any alerts that have been raised 
+    <!-- display any alerts that have been raised -->
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                    {{ message | safe }}
+                {% for msg in messages %}
+                <div class="alert alert-success alert-dismissible fade show alert-message" id="msg" role="alert">
+                    {{ msg | safe }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 {% endfor %}
             </div>
         </div>
-    </div> -->
-
+    </div>
     <!-- Alert Ends -->
 
 

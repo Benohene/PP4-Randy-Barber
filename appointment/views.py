@@ -6,6 +6,7 @@ from .models import Appointment
 from .forms import AppointmentForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 class HomeView(TemplateView):
     """
@@ -32,8 +33,13 @@ class AppointmentView(LoginRequiredMixin, CreateView):
     renders the view of the appointment forms
     """
     template_name = 'appointment.html'
+    model = Appointment
     form_class = AppointmentForm
     success_url= reverse_lazy('user_panel')
+
+    def form_valid(self, form):
+        form.instance.customer = self.request.user
+        return super(AppointmentView, self).form_valid(form)
 
     
 
@@ -49,10 +55,20 @@ class UserPanelView(LoginRequiredMixin, ListView):
     template_name = "user_panel.html"
     context_object_name = 'appointments'
     paginate_by = 4
-    queryset = Appointment.objects.all()
 
+    
     def get_queryset(self):
-        return Appointment.objects.all()
+        if self.request.user.is_staff:
+            return Appointment.objects.all()
+        else:    
+            return Appointment.objects.filter(customer=self.request.user)
+
+
+
+
+
+
+
 
 
 class AppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

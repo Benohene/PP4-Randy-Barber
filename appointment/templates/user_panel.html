@@ -20,7 +20,7 @@
             <h1 class=" ms-5">Appointments:</h1>
             <div class="shadow p-4 mb-3 bg-body bg-body rounded text-black  m-5">
 
-                {% for appointment in object_list %}
+                {% for appointment in appointments %}
                 <div class="list-group fs-4 border p-3 mb-3">
                     <p class="list-group mt-2">Day: {{ appointment.appointment_date }}</p>
                     <p class="list-group mt-2">Time: {{ appointment.appointment_time }}</p>
