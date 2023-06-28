@@ -80,9 +80,8 @@ class AppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessag
 
     def test_func(self):
         appointment = self.get_object()
-        if self.request.user.id:
-            return True
-        return False
+        
+        return self.request.user == appointment.customer
 
 
 class AppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
@@ -103,7 +102,4 @@ class AppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMess
 
     def test_func(self):
         appointment = self.get_object()
-        if self.request.user.id:
-            return True
-        return False
-
+        return self.request.user == appointment.customer
