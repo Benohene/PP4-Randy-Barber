@@ -37,14 +37,13 @@ class AppointmentView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Appointment
     form_class = AppointmentForm
     success_url= reverse_lazy('user_panel')
+    success_message = 'Appointment has successfully being booked!'
 
     def form_valid(self, form):
         form.instance.customer = self.request.user
         return super(AppointmentView, self).form_valid(form)
 
     
-
-
 class UserPanelView(LoginRequiredMixin, ListView):
     """
     View to render Userpanel page 
@@ -57,7 +56,7 @@ class UserPanelView(LoginRequiredMixin, ListView):
     context_object_name = 'appointments'
     paginate_by = 2
 
-    
+
     def get_queryset(self):
         if self.request.user.is_staff:
             return Appointment.objects.all()
@@ -65,14 +64,7 @@ class UserPanelView(LoginRequiredMixin, ListView):
             return Appointment.objects.filter(customer=self.request.user)
 
 
-
-
-
-
-
-
-
-class AppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+class AppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, UpdateView):
     """
     View to render appointment page 
     renders the view of the appointment forms for Update
@@ -81,6 +73,7 @@ class AppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = 'appointment_edit.html'
     form_class = AppointmentForm
     success_url= reverse_lazy('user_panel')
+    success_message = 'Appointment has successfully being edited!'
 
     def userUpdate(request, id):
         appointment = Appointment.objects.get(pk=id)
@@ -91,7 +84,8 @@ class AppointmentEditView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
             return True
         return False
 
-class AppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+
+class AppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
     """
     View to render appointment page 
     renders the view of the appointment forms
@@ -100,6 +94,7 @@ class AppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView)
     success_url = reverse_lazy('user_panel')
     context_object_name = 'appointment'
     queryset = Appointment.objects.all()
+    success_message = 'Appointment has successfully being deleted!'
 
     def get(self, request, *args, **kwargs):
         self.object = self.get_object()

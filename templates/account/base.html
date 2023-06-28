@@ -81,7 +81,13 @@
         {% endwith %}
     </header>
     <!-- Nav Bar and Logo Ends -->
-
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success" id="messages" role="alert">
+        {{message}}
+    </div>
+    {% endfor %}
+    {% endif %}
     <main>
         {% block content %}
         <!-- Content Goes here -->
@@ -119,6 +125,13 @@
         crossorigin="anonymous"></script>
 
     <script src="https://kit.fontawesome.com/2730ac997a.js" crossorigin="anonymous"></script>
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('messages');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2500);
+    </script>
     {% block ext_script %}
 
     {% endblock %}
