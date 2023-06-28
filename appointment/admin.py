@@ -9,3 +9,6 @@ class Appointment(admin.ModelAdmin):
     list_display = ('customer','name', 'appointment_date', 'appointment_time', 'phone_number', 'message')
     search_fields = ['name', 'appointment_date']
     list_filter = ('appointment_time', ('appointment_date'))
+
+
+

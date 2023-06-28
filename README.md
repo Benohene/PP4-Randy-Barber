@@ -1,39 +1,137 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# RANGY BARBERSHOP
+RANDY BARBER is a project application created for Randy Barbershop in the city of Aachen in the North Rhein Westfalen region of Germany. The App is developed for the Barbershop to take in appointments easily and also allows the customer to easily book their appointment at the Barbershop. As it stands now appointments are booked to the shop only by telephone. This App will help the Barbershop to a step further in the field of technology and productivity since calling in bookings waste time and are a bit stressful.
 
-Welcome,
+IMAGE PLACE
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# TABLE OF CONTENT
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+## The Strategy Plane
+Site-Goals
+The Application is aimed to help Barbershop staff easily manage the appointment bookings on the website, as well as keep track of upcoming appointments and capacity, editing and deleting as necessary.
 
-## Codeanywhere Reminders
+## Agile Planning
+The Application also aims to provide customers with a simple, easy and convenient way to book an appointment without the need to call the Barbershop. They will also be able to cancel their bookings or update when needed. They can also book appointments through their account for family and friends.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+This project was developed using agile methodologies by delivering small features in incremental sprints. There were 3 sprints in total, spaced out evenly over four weeks.
 
-`python3 -m http.server`
+Acceptance criteria were created in relation to each of the user stories. All projects were assigned to epics, prioritized under the labels, Must have, should have, and could have. They were assigned to sprints and the story pointed according to complexity. "Must have" stories were completed first, "should haves" and then finally "could haves". It was done this way to ensure that all core requirements were completed first to give the project a complete feel, with the nice-to-have features being added should there be capacity.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+BOARD IMAGES
+## EPIC
+EPIC 1 - Base Setup
+The base setup epic contains all of the stories required for the application's initial setup. The app would not be feasible without the base setup, hence it was the first epic to be supplied because all subsequent features are dependent on the completion of the base configuration. The base had the UI aspect of the Application with the purpose Must Have, the navigations and the footer.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+EPIC 2 - Authentication
 
-`http_server`
+The authentication epic contains all view registration, login, and authorization stories. This epic offers significant functionality and value since without it, the staff would be unable to handle appointments safely while allowing normal site users to observe and conduct activities.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+EPIC 3 - Appointment
+The appointment epic contains all stories about creating, reading, modifying, and cancelling appointments. This enables employees to quickly check forthcoming appointments, manage them, and customers to make and manage their own appointment.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+EPIC 4 - Deployment Epic
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+This epic is for all stories related to deploying the app to Heroku so that the site is live for staff and customer use.
 
-To log into the Heroku toolbelt CLI:
+EPIC 5 -Documentation
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+This epic contains all document-related stories and actions required for documenting the application's software development lifecycle. It looks to provide high-quality documentation that explains all stages of development as well as the information required for running, deploying, and utilizing the program.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## User Stories
+User Stories
+US01: Illustrate the purpose of the application through UI
+As a Site User, I can view the home page so that clearly understand the application's purpose
+US02: Navigate
+As a Site User, I can use the navigation bar so that I can easily navigate the application
+US03: View Appointment
+As a Site User, I can view the appointment available so that I can select mine
+US05: Book an Appointment
+As a Site User, I can book an Appointment so that I can reserve places for myself and if possible my family and friends
+US06: View my booked Appointment(s)
+As a Site User, I can access the list of the appointments I have booked so that I can see the upcoming ones
+US07: Cancel an Appointment
+As a Site User, I can cancel an upcoming appointment I have booked so that my place can be reserved by someone else
+US08: Account registration and login
+As a Site User, I can register for an account so that I can log in and then book an appointment, view my upcoming appointments as well as delete them
+US09: Manage Appointment
+As a Site Admin, I can create, read, update and delete Appointments from my end through the website or the Admin site.
 
----
+## The Scope Plane
+Home page with Barbershop Information.
+Service Page with information about services provided
+Contact Page with contact and location information
+Responsive Design - the app should be fully functional on all devices from 320px up
+Hamburger menu for devices with smaller viewport devices
+Ability to perform CRUD functionality
+Restricted role-based features
 
-Happy coding!
+
+# The Structure Plane
+## Features
+
+###  Navigation Menu
+Contains the various links to all three pages within the website. that is Home, Service, Contact and has all authentication options. This will allow users smooth and easy access to all the pages and it is also responsive to device size. The active pages always have a bottom border under the page name. The navigation bar is responsive on multiple screen sizes - on smaller screens, it covers a 'hamburger' menu style.
+It includes a Brand Logo and links. If the user is not signed in, the links available are the Home, Service, Contact, Register and Login buttons. If a user is signed in, the links available are the Home, Service, Contact, Logout and the name of the user signed in with a user icon.
+
+
+### Homepage
+The Homepage contains the nav bar and the footer. It first welcomes the user with a nice-looking Hero image with a welcome note. The next section gives brief information about the Barbershop and how it all started. It further gives highlights on the services provided just to entice the user. It further gives information about the opening hours and team members. The last section is the Testimonial section where good quotes about the Barbershop from customers are published.
+
+IMAGE
+
+### Service Page
+The service page has the first 2 sections of the homepage with a different Hero image. In addition, it is a section that informs the user of the prices and all customer offers that the Barbershop has. It also has the Testimonial section
+
+IMAGE
+
+### Contact Page
+The contact page has the first 2 sections of the homepage with a different Hero image. In addition, the user can find a map, contact forms and all the contact details of the Barbershop. It also has the Testimonial section
+### Footer
+The footer has a piece of copyright information, social media links and an appointment booking link.
+
+IMAGE
+
+### Appointment Form page
+The Appointment Page has a form that allows the user to fill in their Name, Date, and Time and write a message. The Name, Date and time filled are all required and will pull out a message when not filled. It has a book now button to book after filling in all the fields. This will redirect the user to the user panel to see the list of appointments being booked.
+
+IMAGE
+
+### User Panel Page
+The User Panel page contains the list of all appointments booked. It displays a message when no current appointments are available.
+
+Note!
+At the user panel, the Admin can see all bookings from all users whereas the customer can only see bookings associated with them
+
+IMAGE
+
+### Edit Form page
+The Edit Appointment form is the same as the Appointment booking page just that it provides the already field in data of the user to make amendments.
+
+IMAGE
+
+### Delete Confirmation Page
+The delete confirmation page provides the user with a final warning to accept the deletion or press cancel to return to the user panel. This page was made so that if in case the customer clicked on the delete by mistake they have the option to return.
+
+IMAGE
+
+### Register Account Page
+This page allows the users to sign up so they can access the Appointment booking options. Users need to provide all required fields with the necessary information like the Email, Username, Password and Re-enter password. They have to click on the signup button to be redirected to the homepage with a message alert.
+
+IMAGE
+
+### Login Page
+The login page provides the user with the fields to enter username/email and password to have access to their account. The user is then redirected to the home page.
+
+IMAGE
+
+### Sign Out Page
+The sign-out page gives the last indication to the user to choose if they truly want to sign out. There is a button for the user to click if they want to sign out.
+
+IMAGE
+
+### Message Alert
+There is a message alert that allows the user to see if they have successfully signed up, login and logout.
+
+IMAGE
+
+### Favicon
+A favicon will be implemented with the Barbershop emblem. This will provide an image in the tab's title header to allow users to easily identify the website if they have multiple open. tabs.

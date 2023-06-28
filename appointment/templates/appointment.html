@@ -1,13 +1,14 @@
 {% extends "account/base.html" %}
 {% load static %}
-
 {% load i18n %}
+
 {% block ext_css %}
-<link href="{% static 'js/jquery-ui-1.12.1/jquery-ui.css' %}" rel="stylesheet">
-<link href="{% static 'js/jquery-ui-1.12.1/jquery-ui.structure.min.css' %}" rel="stylesheet">
-<link href="{% static 'js/jquery-ui-1.12.1/jquery-ui.theme.min.css' %}" rel="stylesheet">
+<link href="{% static 'js/jquery-ui-1.12.1/jquery-ui.css' %}" rel="stylesheet" />
+<link href="{% static 'js/jquery-ui-1.12.1/jquery-ui.structure.min.css' %}" rel="stylesheet" />
+<link href="{% static 'js/jquery-ui-1.12.1/jquery-ui.theme.min.css' %}" rel="stylesheet" />
 {% endblock ext_css %}
-{% block title %}{% trans "Make Appointment" %}{% endblock %}
+
+{% block title %}{% trans "Make Appointment" %}{%endblock %}
 
 <!-- Create Appointment form -->
 {% block content %}
@@ -17,10 +18,11 @@
         <form method="POST" action="{% url 'appointment' %}" class="form mb-2 p-2 form-style"
             enctype="multipart/form-data">
             <h1 class="text-center">Make Appointment</h1>
-            {% csrf_token %}
-            {{ form|crispy }}
-            {{ form.media }}
-            <button type="submit" class="btn btn-primary rounded-3 p-2 form-style">Book Now</button>
+            {% csrf_token %} {{ form|crispy }} {{ form.media }}
+            <button type="submit" class="btn btn-primary rounded-3 p-2 form-style">
+                Book Now
+            </button>
+            <a href="{% url 'user_panel' %}" class="btn btn-danger rounded-3 p-2 form-style">Cancel</a>
         </form>
     </div>
 </div>

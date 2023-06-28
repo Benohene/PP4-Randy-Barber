@@ -37,7 +37,6 @@ class AppointmentView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     model = Appointment
     form_class = AppointmentForm
     success_url= reverse_lazy('user_panel')
-    success_message = 'Your Appointment has successfully been booked! See You'
 
     def form_valid(self, form):
         form.instance.customer = self.request.user
@@ -112,5 +111,4 @@ class AppointmentDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView)
         if self.request.user.id:
             return True
         return False
-
 

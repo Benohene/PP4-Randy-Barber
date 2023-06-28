@@ -25,6 +25,3 @@ class Appointment(models.Model):
 
     class Meta:
         ordering = ['appointment_date', 'appointment_time']
-
-
-    
