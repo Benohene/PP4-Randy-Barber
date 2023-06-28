@@ -1,5 +1,5 @@
 asgiref==3.7.2
-backports.zoneinfo==0.2.1;python_version<"3.9"
+backports.zoneinfo==0.2.1
 cloudinary==1.33.0
 crispy-bootstrap5==0.7
 dj-database-url==2.0.0
@@ -16,3 +16,4 @@ python3-openid==3.2.0
 requests-oauthlib==1.3.1
 sqlparse==0.4.4
 urllib3==1.26.16
+backports.zoneinfo==0.2.1;python_version<"3.9"
