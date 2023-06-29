@@ -81,18 +81,14 @@
     <!-- Alert  -->
 
     <!-- display any alerts that have been raised -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                {% for msg in messages %}
-                <div class="alert alert-success alert-dismissible fade show alert-message" id="msg" role="alert">
-                    {{ msg | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
+
+    {% for msg in messages %}
+    <div class="alert alert-success text-center alert-dismissible fade show alert-message" id="msg" role="alert">
+        {{ msg | safe }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+    {% endfor %}
+
     <!-- Alert Ends -->
 
 

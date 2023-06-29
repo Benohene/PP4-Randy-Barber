@@ -83,8 +83,9 @@
     <!-- Nav Bar and Logo Ends -->
     {% if messages %}
     {% for message in messages %}
-    <div class="alert alert-success" id="messages" role="alert">
+    <div class="alert alert-success text-center alert-dismissible fade show alert-message" id="messages" role="alert">
         {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     {% endfor %}
     {% endif %}
