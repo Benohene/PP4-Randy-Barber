@@ -103,7 +103,8 @@ div.hero .hero-heading {
     color: #ffffff;
 }
 
-#sub-header {
+#sub-header1,
+#sub-header2 {
     color: #fff;
 }
 
@@ -338,6 +339,10 @@ textarea {
     text-decoration: none;
     color: #b68500;
     font-weight: 500;
+}
+
+iframe {
+    width: 100%;
 }
 
 /* End Contact */

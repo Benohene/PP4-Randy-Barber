@@ -163,6 +163,11 @@ A favicon will be implemented with the Barbershop emblem. This will provide an i
 
 ![Favicon](docs/readme/favicon.jpg)
 
+## Features Left To Implement
+***
++ In a future release verssion I would like to implement reviews in the service page for customer to comment
++ In future version I would like to implement capacity check
+
 # Wireframes
 At the beginning of this project and as a part of the planning process, wireframes were created using Balsamiq. The wireframes were used to get a basic idea of how the site might look when finished, both on desktop and mobile devices.
 
@@ -198,8 +203,15 @@ Wireframes were created for the following pages and features:
 ## User Panel
 ![Wireframe](docs/wireframes/userpanel.png)
 
-# Database-Design
+# Database Design
+Entity-Relationship diagram for DBMS
 
+Notes on the ER diagram:
+
+The ER diagram provided shows the logical data model.
+The Users table in the ER diagrams is also a logical representation of the data captured during user registration and how it relates to the application data model. The Users table itself is not declared in the models.py file, but is handled by the django modules and this logical view does not reflect all columns and constraints etc. used by the physical data tables in the database.
+
+![dbml](docs/testing/dbml.jpg)
 
 # TECHNOLOGIES APPLIED
 
@@ -251,6 +263,8 @@ Validator Testing
 ### HTML Validator: 
 As this project uses Django templates the html has been validated by manually clicking through the application pages, copying the source of the rendered pages and then validating this version of the html using the W3C Validator [Link](https://validator.w3.org/). To validate the HTML files all Django template tags were manually removed with the HTML code copied and inserted to the base template, including manually pasting in navigation and footer templates into all page testing.
 
+![models](docs/testing/html-valid.jpg)
+
 ### PEP 8 Python Linter: 
 PEP 8 Online linter [Python validator](https://pep8ci.herokuapp.com/#). The code passed without any errors on all files tested:
 
@@ -285,6 +299,38 @@ The W3C CSS Validator Services were used to validate the CSS to ensure there wer
 Lighthouse report showed areas for improvement on SEO and Best practices. Meta descriptions and keywords were added to boost the SEO to 100 but the best practice warnings were coming from the use of an embedded iframe's javascript. Unfortunately I did not find a way to improve this as I am not initialising the google map iframe with javascript.
 
 ![lighthouse](docs/testing/lighthouse.jpg)
+
+# Manual Function test
+There was a manual functionality test instead of the automated test. I checks most functionalites for the sign in, signout and the appointment system.
+
+## Password checks WRONGS
+When the password entered is short, it displays a short password alert.
+![Password](docs/testing/password-short.jpg)
+
+When the password entered is only on charter, it displays a password error alert.
+![Password](docs/testing/common-password.jpg)
+
+When the password entered is at registration are two different ones, it displays a password error alert.
+![Password](docs/testing/password-different.jpg)
+
+When the password entered by the User at login is wrong, it displays a user-password false error alert.
+![Password](docs/testing/user-pass-false.jpg)
+
+When the password entered by the User at registration is already in the databass, it displays a password already exist error alert.
+![Password](docs/testing/same-email.jpg)
+
+## Success inputs comes with Success Messages
+When the Registration, Sign in and Sign out are succesful after the right inputs, there is a message alert to confirm.
+![Sign-in success](docs/testing/sign-in-success.jpg)
+![Sign-out success](docs/testing/sign-out-success.jpg)
+![Register success](docs/testing/register-success.jpg)
+
+## **Other test on the appointment forms**
+The appointment forms all have the same error alert when the inputs are not correcfully done. Other test includes the Date picker with no past dates active and also Sundays disable sice it is not a working day.
+
+![Register success](docs/testing/no.sunday.jpg)
+![Register success](docs/testing/nopastdates.jpg)
+
 
 ## Responsiveness
 
