@@ -1,7 +1,7 @@
 # RANDY BARBERSHOP
 RANDY BARBER is a project application created for Randy Barbershop in the city of Aachen in the North Rhein Westfalen region of Germany. The App is developed for the Barbershop to take in appointments easily and also allows the customer to easily book their appointment at the Barbershop. As it stands now appointments are booked to the shop only by telephone. This App will help the Barbershop to a step further in the field of technology and productivity since calling in bookings waste time and are a bit stressful.
 
-[Mockup](docs/readme-images/12-mockup.jpg)
+![Mockup](docs/readme/mock.jpg)
 
 # TABLE OF CONTENT
 
@@ -16,7 +16,7 @@ This project was developed using agile methodologies by delivering small feature
 
 Acceptance criteria were created in relation to each of the user stories. All projects were assigned to epics, prioritized under the labels, Must have, should have, and could have. They were assigned to sprints and the story pointed according to complexity. "Must have" stories were completed first, "should haves" and then finally "could haves". It was done this way to ensure that all core requirements were completed first to give the project a complete feel, with the nice-to-have features being added should there be capacity.
 
-![Agile Board](docs/readme-images/12-mockup.jpg)
+![Agile Board](docs/readme/board.jpg)
 
 ## EPIC
 ### EPIC 1 - Base Setup
@@ -200,7 +200,7 @@ Wireframes were created for the following pages and features:
 
 # Database-Design
 
-# Technologies
+
 # TECHNOLOGIES APPLIED
 
 * HTML - The structure of the Website was developed using HTML as the main language.
@@ -240,7 +240,64 @@ Tech Sini: Used to generate the mockup of the final website on several Apple dev
 + JSHint: Check code for JavaScript validation.
 + W3 CSS Validator: Check your code for CSS validation.
 
+## Python Modules Used
+
++ Django Class based views (ListView, UpdateView, DeleteView, CreateView) - Used for the classes to create, read, update and delete
++ Mixins (LoginRequiredMixin, UserPassesTestMixin) - Used to enforce login required on views and test user is authorized to perform actions
++ Messages - Used to pass messages to the toasts to display feedback to the user upon actions
+
 # Testing
+Validator Testing
+### HTML Validator: 
+As this project uses Django templates the html has been validated by manually clicking through the application pages, copying the source of the rendered pages and then validating this version of the html using the W3C Validator [Link](https://validator.w3.org/). To validate the HTML files all Django template tags were manually removed with the HTML code copied and inserted to the base template, including manually pasting in navigation and footer templates into all page testing.
+
+### PEP 8 Python Linter: 
+PEP 8 Online linter [Python validator](https://pep8ci.herokuapp.com/#). The code passed without any errors on all files tested:
+
+**Models**
+
+![models](docs/testing/models-py.jpg)
+
+** Views **
+
+![views](docs/testing/views-py.jpg)
+
+**Forms**
+
+![forms](docs/testing/forms-py.jpg)
+
+**Admin**
+
+![admin](docs/testing/admin-py.jpg)
+
+
+### Javascript Validator: 
+JSHint was used to validate the JavaScript with no errors highlighted.
+
+![js-custom](docs/testing/js-custom.jpg)
+
+### CSS Validator: 
+The W3C CSS Validator Services were used to validate the CSS to ensure there were no errors. There was one warning that read: "Imported style sheets are not checked in direct input and file upload modes", which is fine as it's referring to a Google fonts import.
+
+![js-custom](docs/testing/css-validator.jpg)
+
+## Lighthouse Report
+Lighthouse report showed areas for improvement on SEO and Best practices. Meta descriptions and keywords were added to boost the SEO to 100 but the best practice warnings were coming from the use of an embedded iframe's javascript. Unfortunately I did not find a way to improve this as I am not initialising the google map iframe with javascript.
+
+![lighthouse](docs/testing/lighthouse.jpg)
+
+## Responsiveness
+
+The Website has been tested and it passed responsiveness for small mediumum and large screens of various devices. All pages have been tested for with a device size of from 320px.
+
+The Responsive design was tested manually with [Chrome DevTools](https://developer.chrome.com/docs/devtools/) and also the Microsoft Dev tools. The Website worked perfectly well.
+
+The Website pass its responsiveness and no responsive issues were seen on the following trial device:
+
+- iPhone SE
+- iPhone 12 Pro
+- Samsung Galaxy S20/S20 Ultra
+- Surface Duo
 
 # Version Control
 The site was created using the Code Anywhere IDE and pushed to Git Hub to the remote repository ‘PP4-Randy-Barber’.
@@ -276,3 +333,52 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 13. Scroll down to Manual Deploy and choose the main branch
 14. Click Deploy
 15. The app should now be deployed.
+
+## How to Clone the Repository
++ Go to the https://github.com/SamarZiadat/oishii-ramen repository on GitHub
++ Click the "Code" button to the right of the screen, click HTTPs and copy the link there
++ Open a GitBash terminal and navigate to the directory where you want to locate the clone
++ On the command line, type "git clone" then paste in the copied url and press the Enter key to begin the clone process
++ To install the packages required by the application use the command : pip install -r requirements.txt
++ When developing and running the application locally set DEBUG=True in the settings.py file
++ Changes made to the local clone can be pushed back to the repository using the following commands :
+    + git add filenames (or "." to add all changed files)
+    + git commit -m "text message describing changes"
+    + git push
++ N.B. Any changes pushed to the master branch will take effect on the live project once the application is re-deployed from Heroku
+
+## Create a new PostgreSQL database instance on ElephantSQL
++ Log in to ElephantSQL.com to access your dashboard
++ Click “Create New Instance”
++ Set up your plan
++ Give your plan a Name (this is commonly the name of the project)
+    + Select the Tiny Turtle (Free) plan
+    + You can leave the Tags field blank
++ Select “Select Region”
++ Select a data center near you
+    + If you receive a message saying "Error: No cluster available in your-chosen-data-center yet", choose another region. Note: You're free to use any of the available free data centers, be it AWS, Azure or any of the other providers.
++ Then click “Review”
++ Check your details are correct and then click “Create instance”
++ Return to the ElephantSQL dashboard and click on the database instance name for this project
++ In the URL section, click the copy icon to copy the database URL
+
+## Configure Cloudinary to host static files used by the application
++ Log in to Cloudinary - create an account if needed. To create the account provide your name, email and set up a password. For "primary interest" you can choose "Programmable Media for image and video API". Click "Create Account" and you will be sent an email to verify your account and bring you to the dashboard.
++ From the dashboard, copy the "API Environment variable" value by clicking on the "Copy to clipboard" link.
++ Log in to Heroku and go to the Application Configuration page for the application. Click on Settings and click on the "Reveal Config Vars" button.
++ Add a new Config Var called CLOUDINARY_URL and assign it the value copied from the Cloudinary dashboard, but remove the "CLOUDINARY_URL=" at the beginning of the string.
++ In order to be able to run the application on localhost, also add the CLOUDINARY_URL environment variable and value to env.py
+
+## Fork Project
+Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
+
++ Navigate to the GitHub Repository you want to fork.
+
++ On the top right of the page under the header, click the fork button.
+
++ This will create a duplicate of the full project in your GitHub Repository.
+
+# CREDIT/ACKNOWLEDGEMENT
+
+## Acknowledge-Code
+- I want to appreciate my mentor Daisy Mc Girr for her time and efforts invested in me.
