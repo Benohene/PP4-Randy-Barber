@@ -1,6 +1,8 @@
 # RANDY BARBERSHOP
 RANDY BARBER is a project application created for Randy Barbershop in the city of Aachen in the North Rhein Westfalen region of Germany. The App is developed for the Barbershop to take in appointments easily and also allows the customer to easily book their appointment at the Barbershop. As it stands now appointments are booked to the shop only by telephone. This App will help the Barbershop to a step further in the field of technology and productivity since calling in bookings waste time and are a bit stressful.
 
+[Randy Barber Live Site](https://randy-barber-app-bd2e48941993.herokuapp.com/)
+
 ![Mockup](docs/readme/mock.jpg)
 
 # TABLE OF CONTENT
