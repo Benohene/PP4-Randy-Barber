@@ -29,9 +29,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = 'DEVELOPMENT' in os.environ
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 
 ALLOWED_HOSTS = ["8000-benohene-pp4-randy-barbe-yp9v9459va.us2.codeanyapp.com", "randy-barber-app.herokuapp.com", "localhost", 'randy-barber-app-bd2e48941993.herokuapp.com']
 

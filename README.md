@@ -239,3 +239,40 @@ Tech Sini: Used to generate the mockup of the final website on several Apple dev
 + HTML Validator: Check your code for HTML validation.
 + JSHint: Check code for JavaScript validation.
 + W3 CSS Validator: Check your code for CSS validation.
+
+# Testing
+
+# Version Control
+The site was created using the Code Anywhere IDE and pushed to Git Hub to the remote repository ‘PP4-Randy-Barber’.
+
+The following git commands were used throughout development to push code to the remote repo:
+
+```git add .``` - This command was used to add all updated file(s) to the staging area.
+
+```git commit -m “commit message”``` - This command was used to commit changes from the staging area to the local repository queue ready for the final step.
+
+```git push``` - This command was used to push all committed code to the remote repository on Git Hub so it is safe and secure.
+
+# Heroku Deployment
+The site was deployed to Heroku. The steps to deploy are as follows:
+
+1. Navigate to Heroku and create an account
+2. Click the new button in the top right corner
+3. Select Create a New App
+4. Enter the App name
+5. Select a region and click Create app
+6. Click the resources tab and search for Heroku Postgres
+7. Select hobby dev and continue
+8. Go to the settings tab and then click Reveal config Vars
+9. Add the following config vars:
+    + SECRET_KEY: (Your secret key)
+    + DATABASE_URL: (This should already exist with add on of Postgres)
+    + EMAIL_HOST_USER: (email address)
+    + EMAIL_HOST_PASS: (email app password)
+    + CLOUNDINARY_URL: (Cloudinary API URL)
+10. Click the deploy tab
+11. Scroll down to Connect to GitHub and sign in / authorize when prompted
+12. In the search box, find the repository you want to deploy and click connect
+13. Scroll down to Manual Deploy and choose the main branch
+14. Click Deploy
+15. The app should now be deployed.

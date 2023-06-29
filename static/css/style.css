@@ -31,17 +31,17 @@ body {
 /*hero*/
 .service-hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-        url("https: //res.cloudinary.com/dtiuam2iy/image/upload/v1687988983/static/images/cover_3.5373e4ef8ed6.jpg");
+        url("../images/3.jpg");
 }
 
 .home-hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-        url("https: //res.cloudinary.com/dtiuam2iy/image/upload/v1687988988/static/images/cover_1.9960aac7bdbd.jpg");
+        url("../images/cover_1.jpg");
 }
 
 .contact-hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-        url("https: //res.cloudinary.com/dtiuam2iy/image/upload/v1687988992/static/images/3.d7a4f8065807.jpg");
+        url("../images/cover_3.jpg");
 }
 
 div.hero {
@@ -296,7 +296,7 @@ section {
 /* Contact */
 .contact-section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-        url("https://res.cloudinary.com/dtiuam2iy/image/upload/v1687989000/static/images/map-image.f40ed5b1e791.png");
+        url("../images/map-image.png");
     color: #ffffff;
 }
 
