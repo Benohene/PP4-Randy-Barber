@@ -31,17 +31,17 @@ body {
 /*hero*/
 .service-hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-        url("../images/3.jpg");
+        url("https://res.cloudinary.com/dtiuam2iy/image/upload/v1688020625/static/cover_3_xfokbm.jpg");
 }
 
 .home-hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-        url("../images/cover_1.jpg");
+        url("https://res.cloudinary.com/dtiuam2iy/image/upload/v1688020622/static/cover_1_vag1bj.jpg");
 }
 
 .contact-hero {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)),
-        url("../images/cover_3.jpg");
+        url("https://res.cloudinary.com/dtiuam2iy/image/upload/v1688020871/static/3_pmfcjn.jpg");
 }
 
 div.hero {
@@ -296,7 +296,7 @@ section {
 /* Contact */
 .contact-section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-        url("../images/map-image.png");
+        url("https://res.cloudinary.com/dtiuam2iy/image/upload/v1688020872/static/map-image_mfbivr.png");
     color: #ffffff;
 }
 

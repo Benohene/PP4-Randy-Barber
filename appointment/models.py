@@ -15,8 +15,11 @@ TIME_CHOICES = (
     ("7 PM", "7 PM"),
 )
 
+
 class Appointment(models.Model):
-    customer = models.ForeignKey(User, on_delete=models.CASCADE, related_name="customer", null=True, blank=True)
+    customer = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="customer", null=True, blank=True
+    )
     name = models.CharField(max_length=400)
     appointment_date = models.DateField()
     appointment_time = models.CharField(choices=TIME_CHOICES)
@@ -24,4 +27,4 @@ class Appointment(models.Model):
     message = models.TextField(null=True, blank=True)
 
     class Meta:
-        ordering = ['appointment_date', 'appointment_time']
+        ordering = ["appointment_date", "appointment_time"]
